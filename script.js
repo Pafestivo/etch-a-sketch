@@ -18,7 +18,6 @@ function createBoxes() { //create default grid at 16:16
         let colorValue = colorInput.value; //allow color selection
         return colorValue;
       }
-
       innerGrid.style.backgroundColor = changeColor();
     }
   }
