@@ -1,7 +1,7 @@
 const gridBox = document.getElementById('grid'); //target the grid container
 const colorInput = document.getElementById('color') //target the color picker input
 
-
+//default grid area
 function createBoxes() { //create default grid at 16:16
   for (i = 0; i < (16 * 16); i++) {
     const createBox = document.createElement('div'); //create new div
@@ -35,8 +35,10 @@ function clearColors() {
   }
 }
 //end clear button
+//end of default grid area
 
 
+//custom grid area
 const chooseSize = document.getElementById('choose-size');
 chooseSize.addEventListener('click', sizePicker); //run sizePicker() when choose size button clicked
 
@@ -95,6 +97,7 @@ function sizePicker() {
   //end clear button
   
 }
+//end of custom grid area
 
 
 
