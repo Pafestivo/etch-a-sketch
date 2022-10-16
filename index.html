@@ -8,19 +8,31 @@
   <title>Etch-a-Sketch</title>
 </head>
 <body>
-  <div id="grid">
 
-  </div> <!-- /grid -->
+  <header>
+    <h1>Etch-a-Sketch</h1>
+  </header>
 
-  <div class="buttons">
-    <button id="clear">clear</button>
-    <button id="choose-size">Choose canvas size</button>
-    <div class="color-picker">
-      <label for="color">Pick a color:</label>
-      <input type="color" id="color">
-    </div> <!-- /color-picker -->
+  <div class="container">
+    <div id="grid"></div> <!-- /grid -->
+  
+    <div class="buttons">
+      <button id="choose-size">Choose canvas size</button>
+      <button id="color-mode">Color mode</button>
+      <button id="rainbow">Rainbow mode</button>
 
-  </div> <!-- /buttons -->
+      <button id="erase">Erase</button>
+      <button id="clear">clear</button>
+
+
+      <div class="color-picker">
+        <label for="color">Pick a color:</label>
+        <input type="color" id="color">
+      </div> <!-- /color-picker -->
+    </div> <!-- /buttons -->
+
+  </div><!-- /container -->
+  
 
 </body>
 </html>

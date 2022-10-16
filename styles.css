@@ -9,31 +9,51 @@ body {
   background: url(images/background.jpg);
 }
 
+header {
+  margin: 65px auto 80px auto;
+}
+
+header h1 {
+  font-size: 5rem;
+  color: white;
+  width: max-content;
+  margin: 0 auto;
+  border-bottom: 1px solid white;
+}
+
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 60px;
+  justify-content: center;
+}
+
 #grid {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   background-color: white;
   width: 500px;
   height: 500px;
-  margin: 0 auto;
 }
 
 button {
   display: block;
   background-color: grey;
   padding: 10px;
+  width: 250px;
   font-size: 1.4em;
   border-radius: 10px;
 }
 
 .buttons {
   display: flex;
-  width: 600px;
-  height: 80px;
+  width: 300px;
+  height: max-content;
+  flex-direction: column;
+  row-gap: 30px;
   justify-content: space-evenly;
   align-items: center;
-  gap: 10px;
-  margin: 50px auto;
+  margin-top: 25px;
 }
 
 .color-picker {
