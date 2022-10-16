@@ -27,10 +27,6 @@ button {
   margin: 40px auto 0 auto;
 }
 
-.red-background {
-  background-color: red;
-}
-
 .buttons {
   display: flex;
   width: 400px;
