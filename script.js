@@ -28,10 +28,21 @@ const sliderValue = document.getElementById('slider-value');
 const sizeSlider = document.getElementById('size-slider');
 const grid = document.getElementById('grid');
 
-
 clear.onclick = () => resetGrid();
 sizeSlider.onmousemove = (e) => matchSliderValue(e.target.value);
 sizeSlider.onchange = (e) => remakeGrid(e.target.value);
+
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
+
+
+function changeColor(e) {
+  if(e.type === 'mouseover' && !mouseDown) return
+  if(currentMode === 'color') {
+    e.target.style.backgroundColor = currentColor;
+  }
+}
 
 function resetGrid() {
   for(i = 0; i > currentSize * currentSize; i++) {
@@ -65,7 +76,10 @@ function createGrid(size) {
   for(i = 0; i < size * size; i++) {
     const innerBox = document.createElement('div')
     innerBox.setAttribute('id', 'box' + i)
+    innerBox.addEventListener('mouseover', changeColor)
+    innerBox.addEventListener('mousedown', changeColor)
     grid.appendChild(innerBox);
   }
-
 }
+
+window.onload = () => createGrid(currentSize);
