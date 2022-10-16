@@ -19,28 +19,43 @@ function setCurrentSize(newSize) {
   currentSize = newSize
 }
 
-
-const grid = document.getElementById('grid');
+const colorPicker = document.getElementById('color-picker');
 const colorMode = document.getElementById('color-mode');
 const rainbowMode = document.getElementById('rainbow-mode');
 const eraseBtn = document.getElementById('erase');
 const clear = document.getElementById('clear');
 const sliderValue = document.getElementById('slider-value');
 const sizeSlider = document.getElementById('size-slider');
-const colorPicker = document.getElementById('color-picker');
+const grid = document.getElementById('grid');
 
 
+clear.onclick = () => resetGrid();
+sizeSlider.onmousemove = (e) => matchSliderValue(e.target.value);
 sizeSlider.onchange = (e) => remakeGrid(e.target.value);
 
-
-
-function remakeGrid(size) {
-  reloadGrid();
-  createGrid(size);
+function resetGrid() {
+  for(i = 0; i > currentSize * currentSize; i++) {
+    const innerBox = getElementById('box' + i);
+    innerBox.style.backgroundColor = 'white';
+  }
 }
 
+function matchSliderValue(value) {
+  sliderValue.innerHTML = `${value} x ${value}`;
+}
+
+function remakeGrid(size) {
+  setCurrentSize(size)
+  matchSliderValue(size)
+  reloadGrid()
+}
 
 function reloadGrid() {
+  clearGrid();
+  createGrid(currentSize);
+}
+
+function clearGrid() {
   grid.innerHTML = "";
 }
 
