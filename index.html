@@ -17,13 +17,15 @@
     <div id="grid"></div> <!-- /grid -->
   
     <div class="buttons">
-      <button id="choose-size">Choose canvas size</button>
       <button id="color-mode">Color mode</button>
       <button id="rainbow">Rainbow mode</button>
-
       <button id="erase">Erase</button>
       <button id="clear">clear</button>
 
+      <div class="slider">
+        <div id="slider-value">16 x 16</div>
+        <input type="range" id="size-slider" min="1" max="64">
+      </div>
 
       <div class="color-picker">
         <label for="color">Pick a color:</label>
