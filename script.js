@@ -38,8 +38,6 @@ function clearColors() {
 //end of default grid area
 
 
-
-
 //custom grid area
 const chooseSize = document.getElementById('choose-size');
 chooseSize.addEventListener('click', sizePicker); //run sizePicker() when choose size button clicked
