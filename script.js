@@ -28,7 +28,8 @@ const sliderValue = document.getElementById('slider-value');
 const sizeSlider = document.getElementById('size-slider');
 const grid = document.getElementById('grid');
 
-clear.onclick = () => resetGrid();
+
+clear.onclick = () => remakeGrid(currentSize);
 sizeSlider.onmousemove = (e) => matchSliderValue(e.target.value);
 sizeSlider.onchange = (e) => remakeGrid(e.target.value);
 
@@ -41,13 +42,6 @@ function changeColor(e) {
   if(e.type === 'mouseover' && !mouseDown) return
   if(currentMode === 'color') {
     e.target.style.backgroundColor = currentColor;
-  }
-}
-
-function resetGrid() {
-  for(i = 0; i > currentSize * currentSize; i++) {
-    const innerBox = getElementById('box' + i);
-    innerBox.style.backgroundColor = 'white';
   }
 }
 
