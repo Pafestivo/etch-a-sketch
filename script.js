@@ -30,8 +30,19 @@ const sizeSlider = document.getElementById('size-slider');
 const colorPicker = document.getElementById('color-picker');
 
 
-createGrid(currentSize);
+sizeSlider.onchange = (e) => remakeGrid(e.target.value);
 
+
+
+function remakeGrid(size) {
+  reloadGrid();
+  createGrid(size);
+}
+
+
+function reloadGrid() {
+  grid.innerHTML = "";
+}
 
 function createGrid(size) {
   grid.style.gridTemplateColumns = 'repeat(' + size + ', 1fr)';
@@ -39,7 +50,6 @@ function createGrid(size) {
   for(i = 0; i < size * size; i++) {
     const innerBox = document.createElement('div')
     innerBox.setAttribute('id', 'box' + i)
-    innerBox.classList.add('innerBox');
     grid.appendChild(innerBox);
   }
 
