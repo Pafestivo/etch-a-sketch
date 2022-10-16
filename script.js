@@ -1,4 +1,6 @@
 const gridBox = document.getElementById('grid'); //target the grid container
+const colorInput = document.getElementById('color') //target the color picker input
+
 
 function createBoxes() { //create default grid at 16:16
   for (i = 0; i < (16 * 16); i++) {
@@ -9,7 +11,15 @@ function createBoxes() { //create default grid at 16:16
     const innerGrid = document.getElementById('box' + i); // add event listener to each box using the loop
     innerGrid.addEventListener('mouseover', colorChange); //change color on hover
     function colorChange() {
-    innerGrid.style.backgroundColor = 'rgb(255, 100, 100)';
+      
+      colorInput.addEventListener('change', changeColor);
+      function changeColor() {
+
+        let colorValue = colorInput.value; //allow color selection
+        return colorValue;
+      }
+
+      innerGrid.style.backgroundColor = changeColor();
     }
   }
 }
@@ -59,7 +69,15 @@ function sizePicker() {
       const innerGrid = document.getElementById('box' + i); // add event listener to each box using the loop
       innerGrid.addEventListener('mouseover', colorChange); //change color on hover
       function colorChange() {
-      innerGrid.style.backgroundColor = 'rgb(255, 100, 100)';
+      
+        colorInput.addEventListener('change', changeColor);
+        function changeColor() {
+
+          let colorValue = colorInput.value; //allow color selection
+          return colorValue;
+        }
+
+        innerGrid.style.backgroundColor = changeColor();
       }
     }
   }
