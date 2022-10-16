@@ -13,7 +13,24 @@ body {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   background-color: white;
-  width: 800px;
-  height: 800px;
+  width: 500px;
+  height: 500px;
   margin: 0 auto;
+}
+
+.inner-grid {
+  border: 1px solid black;
+}
+
+button {
+  display: block;
+  background-color: grey;
+  padding: 10px;
+  font-size: 1.4em;
+  border-radius: 10px;
+  margin: 40px auto 0 auto;
+}
+
+.red-background {
+  background-color: red;
 }
