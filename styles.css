@@ -36,6 +36,17 @@ header h1 {
   height: 500px;
 }
 
+.buttons {
+  display: flex;
+  width: 300px;
+  height: max-content;
+  flex-direction: column;
+  row-gap: 30px;
+  margin-top: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 button {
   display: block;
   background-color: grey;
@@ -50,15 +61,18 @@ button:hover {
   background-color: rgb(161, 161, 161);
 }
 
-.buttons {
+.slider {
   display: flex;
-  width: 300px;
-  height: max-content;
   flex-direction: column;
-  row-gap: 30px;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 25px;
+  place-items: center;
+  background-color: grey;
+  padding: 10px;
+  width: 250px;
+  font-size: 1.2em;
+  border-radius: 10px;
+}
+
+#size-value {
 }
 
 .color-picker {
@@ -68,11 +82,13 @@ button:hover {
 
 label {
   color: white;
+  text-align: center;
 }
 
-#color {
-  width: 85px;
+#color-picker {
+  width: 250px;
   height: 35px;
   background: transparent;
   border: none;
 }
+
