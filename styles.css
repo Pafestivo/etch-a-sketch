@@ -68,10 +68,11 @@ button:hover {
 
 label {
   color: white;
+  text-align: center;
 }
 
 #color {
-  width: 85px;
+  width: 250px;
   height: 35px;
   background: transparent;
   border: none;
