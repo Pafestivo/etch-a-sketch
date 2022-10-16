@@ -18,10 +18,6 @@ body {
   margin: 0 auto;
 }
 
-.inner-grid {
-  border: 1px solid black;
-}
-
 button {
   display: block;
   background-color: grey;
@@ -33,4 +29,10 @@ button {
 
 .red-background {
   background-color: red;
+}
+
+.buttons {
+  display: flex;
+  width: 400px;
+  margin: 0 auto;
 }
