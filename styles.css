@@ -61,6 +61,11 @@ button:hover {
   background-color: rgb(161, 161, 161);
 }
 
+.active {
+  background-color: rgb(161, 161, 161);
+  border: 1px solid rgba(255, 255, 67, 0.432);
+}
+
 .slider {
   display: flex;
   flex-direction: column;
@@ -109,6 +114,5 @@ label {
   border: none;
 }
 
-.innerBox {
-  background-color: red;
-}
+
+

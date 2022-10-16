@@ -13,7 +13,7 @@ function setCurrentColor(newColor) {
 
 function setCurrentMode(newMode) {
   currentMode = newMode
-  console.log(currentMode);
+  activeBtn();
 }
 
 function setCurrentSize(newSize) {
@@ -77,6 +77,20 @@ function clearGrid() {
   grid.innerHTML = "";
 }
 
+function activeBtn() {
+  eraseBtn.classList.remove('active');
+  colorBtn.classList.remove('active');
+  rainbowBtn.classList.remove('active');
+
+  if(currentMode === 'rainbow') {
+    rainbowBtn.classList.add('active');
+  } else if(currentMode === 'color') {
+    colorBtn.classList.add('active');
+  } else if(currentMode === 'erase') {
+    eraseBtn.classList.add('active');
+  }
+}
+
 function createGrid(size) {
   grid.style.gridTemplateColumns = 'repeat(' + size + ', 1fr)';
 
@@ -89,4 +103,7 @@ function createGrid(size) {
   }
 }
 
-window.onload = () => createGrid(currentSize);
+window.onload = () => {
+  createGrid(currentSize);
+  activeBtn();
+}
