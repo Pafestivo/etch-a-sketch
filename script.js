@@ -12,13 +12,13 @@ function createBoxes() { //create default grid at 16:16
     innerGrid.addEventListener('mouseover', colorChange); //change color on hover
     function colorChange() {
       
-      colorInput.addEventListener('change', changeColor);
-      function changeColor() {
+      colorInput.addEventListener('change', changeBoxColor);
+      function changeBoxColor() {
 
         let colorValue = colorInput.value; //allow color selection
         return colorValue;
       }
-      innerGrid.style.backgroundColor = changeColor();
+      innerGrid.style.backgroundColor = changeBoxColor();
     }
   }
 }
@@ -69,14 +69,14 @@ function sizePicker() {
       innerGrid.addEventListener('mouseover', colorChange); //change color on hover
       function colorChange() {
       
-        colorInput.addEventListener('change', changeColor);
-        function changeColor() {
+        colorInput.addEventListener('change', changeBoxColor);
+        function changeBoxColor() {
 
           let colorValue = colorInput.value; //allow color selection
           return colorValue;
         }
 
-        innerGrid.style.backgroundColor = changeColor();
+        innerGrid.style.backgroundColor = changeBoxColor();
       }
     }
   }
