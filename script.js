@@ -13,6 +13,7 @@ function setCurrentColor(newColor) {
 
 function setCurrentMode(newMode) {
   currentMode = newMode
+  console.log(currentMode);
 }
 
 function setCurrentSize(newSize) {
@@ -20,8 +21,8 @@ function setCurrentSize(newSize) {
 }
 
 const colorPicker = document.getElementById('color-picker');
-const colorMode = document.getElementById('color-mode');
-const rainbowMode = document.getElementById('rainbow-mode');
+const colorBtn = document.getElementById('color-mode');
+const rainbowBtn = document.getElementById('rainbow-mode');
 const eraseBtn = document.getElementById('erase');
 const clear = document.getElementById('clear');
 const sliderValue = document.getElementById('slider-value');
@@ -29,9 +30,14 @@ const sizeSlider = document.getElementById('size-slider');
 const grid = document.getElementById('grid');
 
 
+colorPicker.onchange = (e) => setCurrentColor(e.target.value);
+colorBtn.onclick = () => setCurrentMode('color');
+rainbowBtn.onclick = () => setCurrentMode('rainbow');
+eraseBtn.onclick = () => setCurrentMode('erase');
 clear.onclick = () => remakeGrid(currentSize);
 sizeSlider.onmousemove = (e) => matchSliderValue(e.target.value);
 sizeSlider.onchange = (e) => remakeGrid(e.target.value);
+
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
@@ -42,6 +48,13 @@ function changeColor(e) {
   if(e.type === 'mouseover' && !mouseDown) return
   if(currentMode === 'color') {
     e.target.style.backgroundColor = currentColor;
+  } else if(currentMode === 'erase') {
+    e.target.style.backgroundColor = '#fff';
+  } else if(currentMode === 'rainbow') {
+    let randomR = Math.floor(Math.random() * 256)
+    let randomG = Math.floor(Math.random() * 256)
+    let randomB = Math.floor(Math.random() * 256)
+    e.target.style.backgroundColor = 'rgb('+randomR+','+randomG+','+randomB+')';
   }
 }
 
