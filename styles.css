@@ -114,6 +114,7 @@ label {
   border: none;
 }
 
+/* media query 880px */
 @media only screen and (max-width: 880px) {
   .container {
     flex-direction: column;
@@ -126,15 +127,11 @@ label {
   }
   
   .buttons {
-    display: flex;
     width: 500px;
-    height: max-content;
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 20px;
     column-gap: 5px;
-    justify-content: space-evenly;
-    align-items: center;
   }
   
   button {
@@ -159,9 +156,60 @@ label {
   #color-picker {
     width: 300px;
     height: 40px;
-    background: transparent;
-    border: none;
   }
   
+}
+
+/* media query 600px */
+@media only screen and (max-width: 700px) {
+
+  * {
+    font-size: 10px;
+  }
+
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    background-color: white;
+    width: 335px;
+    height: 335px;
+  }
+ 
+  .buttons {
+    width: 350px;
+  }
+  
+  button {
+    width: 150px;
+    height: 65px;
+    font-size: 1.8rem;
+  }
+
+  .slider {
+    width: 300px;
+  }
+
+  #size-slider {
+    width: 250px;
+    height: 12px;
+  }
+
+  #size-slider::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+  }
+
+  #slider-value {
+    font-size: 1.6em;
+    padding-bottom: 8px;
+  }
+  
+  label {
+    font-size: 2em;
+  }
+
+  #color-picker {
+    height: 50px;
+  }
 }
 
